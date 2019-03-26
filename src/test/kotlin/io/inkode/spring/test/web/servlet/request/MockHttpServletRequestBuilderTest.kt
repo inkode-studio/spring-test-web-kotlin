@@ -1,6 +1,5 @@
 package io.inkode.spring.test.web.servlet.request
 
-import io.inkode.spring.test.web.servlet.request.contentFromResource
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.skyscreamer.jsonassert.JSONAssert.assertEquals
