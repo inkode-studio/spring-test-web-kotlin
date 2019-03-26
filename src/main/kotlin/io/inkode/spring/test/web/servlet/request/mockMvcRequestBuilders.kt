@@ -1,6 +1,7 @@
 package io.inkode.spring.test.web.servlet.request
 
 import org.springframework.http.HttpMethod
+import org.springframework.test.web.servlet.MvcResult
 import org.springframework.test.web.servlet.RequestBuilder
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder
 import org.springframework.test.web.servlet.request.MockMultipartHttpServletRequestBuilder
@@ -226,5 +227,32 @@ private fun <T : RequestBuilder> initAndReturn(
     init(requestBuilder)
 
     return requestBuilder
+}
+
+/**
+ * Create a [RequestBuilder] for an async dispatch from the
+ * [MvcResult] of the request that started async processing.
+ *
+ * Usage involves performing a request that starts async processing first:
+ * <pre class="code">
+ * MvcResult mvcResult = this.mockMvc.perform(get("/1"))
+ * .andExpect(request().asyncStarted())
+ * .andReturn();
+</pre> *
+ *
+ * And then performing the async dispatch re-using the `MvcResult`:
+ * <pre class="code">
+ * this.mockMvc.perform(asyncDispatch(mvcResult))
+ * .andExpect(status().isOk())
+ * .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+ * .andExpect(content().string("{\"name\":\"Joe\",\"someDouble\":0.0,\"someBoolean\":false}"));
+</pre> *
+ * @param mvcResult the result from the request that started async processing
+ */
+fun asyncDispatch(mvcResult: MvcResult): RequestBuilder {
+    // There must be an async result before dispatching
+    mvcResult.asyncResult
+
+    return MockMvcRequestBuilders.asyncDispatch(mvcResult)
 }
 
