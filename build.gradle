@@ -1,0 +1,49 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.21'
+    id "org.jetbrains.kotlin.plugin.spring" version "1.3.21"
+}
+
+group 'io.inkode.spring'
+version '0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Kotlin
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    // Core provided dependencies
+    compileOnly("org.springframework:spring-test:5.0.12.RELEASE")
+    compileOnly("org.springframework:spring-web:5.0.12.RELEASE")
+
+    // JUnit 5
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.4.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.4.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.4.1")
+
+    // Mockito
+    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0")
+
+    // Spring boot web and test starters for testing
+    testImplementation("org.springframework.boot:spring-boot-starter-web:2.0.8.RELEASE")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.0.8.RELEASE")
+
+    // JSON assert
+    testImplementation("org.skyscreamer:jsonassert:1.5.0")
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+test {
+    useJUnitPlatform()
+
+    maxHeapSize = '1G'
+}
