@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController
 @ExtendWith(SpringExtension::class)
 @SpringBootTest
 @AutoConfigureMockMvc
-class MockMvcIT {
+class MockMvcKtIT {
     @Autowired
     private lateinit var mockMvc: MockMvc
 

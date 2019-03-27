@@ -1,7 +1,6 @@
 package io.inkode.spring.test.web.servlet.request
 
 import org.springframework.http.HttpMethod
-import org.springframework.test.web.servlet.MvcResult
 import org.springframework.test.web.servlet.RequestBuilder
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder
 import org.springframework.test.web.servlet.request.MockMultipartHttpServletRequestBuilder
@@ -17,8 +16,7 @@ fun get(
     urlTemplate: String,
     vararg uriVars: Any,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.get(urlTemplate, *uriVars))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.get(urlTemplate, *uriVars))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a GET request.
@@ -27,8 +25,7 @@ fun get(
 fun get(
     uri: URI,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.get(uri))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.get(uri))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a POST request.
@@ -38,8 +35,7 @@ fun get(
 fun post(
     urlTemplate: String, vararg uriVars: Any,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.post(urlTemplate, *uriVars))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.post(urlTemplate, *uriVars))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a POST request.
@@ -48,8 +44,7 @@ fun post(
 fun post(
     uri: URI,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.post(uri))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.post(uri))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a PUT request.
@@ -59,8 +54,7 @@ fun post(
 fun put(
     urlTemplate: String, vararg uriVars: Any,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.put(urlTemplate, *uriVars))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.put(urlTemplate, *uriVars))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a PUT request.
@@ -69,8 +63,7 @@ fun put(
 fun put(
     uri: URI,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.put(uri))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.put(uri))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a PATCH request.
@@ -80,8 +73,7 @@ fun put(
 fun patch(
     urlTemplate: String, vararg uriVars: Any,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.patch(urlTemplate, *uriVars))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.patch(urlTemplate, *uriVars))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a PATCH request.
@@ -90,8 +82,7 @@ fun patch(
 fun patch(
     uri: URI,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.patch(uri))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.patch(uri))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a DELETE request.
@@ -101,8 +92,7 @@ fun patch(
 fun delete(
     urlTemplate: String, vararg uriVars: Any,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.delete(urlTemplate, *uriVars))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.delete(urlTemplate, *uriVars))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a DELETE request.
@@ -111,8 +101,7 @@ fun delete(
 fun delete(
     uri: URI,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.delete(uri))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.delete(uri))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for an OPTIONS request.
@@ -122,8 +111,7 @@ fun delete(
 fun options(
     urlTemplate: String, vararg uriVars: Any,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.options(urlTemplate, *uriVars))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.options(urlTemplate, *uriVars))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for an OPTIONS request.
@@ -132,8 +120,7 @@ fun options(
 fun options(
     uri: URI,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.options(uri))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.options(uri))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a HEAD request.
@@ -143,8 +130,7 @@ fun options(
 fun head(
     urlTemplate: String, vararg uriVars: Any,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.head(urlTemplate, *uriVars))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.head(urlTemplate, *uriVars))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a HEAD request.
@@ -153,8 +139,7 @@ fun head(
 fun head(
     uri: URI,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.head(uri))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.head(uri))
 
 /**
  * Create a [MockHttpServletRequestBuilder] for a request with the given HTTP method.
@@ -167,7 +152,7 @@ fun request(
     init: MockHttpServletRequestBuilder.() -> Unit = {}
 ): MockHttpServletRequestBuilder = initAndReturn(
     init,
-    MockMvcRequestBuilders.request(method, urlTemplate, uriVars)
+    MockMvcRequestBuilders.request(method, urlTemplate, *uriVars)
 )
 
 /**
@@ -178,8 +163,7 @@ fun request(
 fun request(
     httpMethod: HttpMethod, uri: URI,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.request(httpMethod, uri))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.request(httpMethod, uri))
 
 /**
  * Alternative factory method that allows for custom HTTP verbs (e.g. WebDAV).
@@ -189,8 +173,7 @@ fun request(
 fun request(
     httpMethod: String, uri: URI,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.request(httpMethod, uri))
+): MockHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.request(httpMethod, uri))
 
 /**
  * Create a [MockMultipartHttpServletRequestBuilder] for a multipart request.
@@ -212,8 +195,7 @@ fun multipart(
 fun multipart(
     uri: URI,
     init: MockHttpServletRequestBuilder.() -> Unit = {}
-): MockMultipartHttpServletRequestBuilder =
-    initAndReturn(init, MockMvcRequestBuilders.multipart(uri))
+): MockMultipartHttpServletRequestBuilder = initAndReturn(init, MockMvcRequestBuilders.multipart(uri))
 
 /**
  * Init a [RequestBuilder] and return initialized request.
@@ -227,32 +209,5 @@ private fun <T : RequestBuilder> initAndReturn(
     init(requestBuilder)
 
     return requestBuilder
-}
-
-/**
- * Create a [RequestBuilder] for an async dispatch from the
- * [MvcResult] of the request that started async processing.
- *
- * Usage involves performing a request that starts async processing first:
- * <pre class="code">
- * MvcResult mvcResult = this.mockMvc.perform(get("/1"))
- * .andExpect(request().asyncStarted())
- * .andReturn();
-</pre> *
- *
- * And then performing the async dispatch re-using the `MvcResult`:
- * <pre class="code">
- * this.mockMvc.perform(asyncDispatch(mvcResult))
- * .andExpect(status().isOk())
- * .andExpect(content().contentType(MediaType.APPLICATION_JSON))
- * .andExpect(content().string("{\"name\":\"Joe\",\"someDouble\":0.0,\"someBoolean\":false}"));
-</pre> *
- * @param mvcResult the result from the request that started async processing
- */
-fun asyncDispatch(mvcResult: MvcResult): RequestBuilder {
-    // There must be an async result before dispatching
-    mvcResult.asyncResult
-
-    return MockMvcRequestBuilders.asyncDispatch(mvcResult)
 }
 

@@ -2,8 +2,8 @@ package io.inkode.spring.test.web.servlet.request
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import org.skyscreamer.jsonassert.JSONAssert.assertEquals
-import org.skyscreamer.jsonassert.JSONCompareMode.STRICT
+import org.skyscreamer.jsonassert.JSONAssert
+import org.skyscreamer.jsonassert.JSONCompareMode
 import org.springframework.mock.web.MockServletContext
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import java.io.FileNotFoundException
@@ -11,23 +11,23 @@ import java.io.FileNotFoundException
 /**
  * @author Maxim Seredkin
  */
-class MockHttpServletRequestBuilderTest {
+internal class MockHttpServletRequestBuilderKtTest {
     @Test
-    fun bodyFromResource() {
+    fun contentFromResource() {
         // Act
         val result = MockMvcRequestBuilders.get("/").contentFromResource("/content.json")
 
         // Assert
-        assertEquals(
+        JSONAssert.assertEquals(
             "Content not set or not equal to expected",
             "{\"field\": \"value\"}",
             String(result.buildRequest(MockServletContext()).contentAsByteArray!!),
-            STRICT
+            JSONCompareMode.STRICT
         )
     }
 
     @Test
-    fun bodyFromResourceWhenFileNotExists() {
+    fun contentFromResourceWhenFileNotExists() {
         // Act && Assert
         assertThrows<FileNotFoundException>("Classpath file is exists") {
             MockMvcRequestBuilders.get("/").contentFromResource("/not_exists.json")

@@ -2,7 +2,7 @@ package io.inkode.spring.test.web.servlet
 
 import com.nhaarman.mockitokotlin2.*
 import io.inkode.spring.test.web.servlet.request.get
-import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.springframework.http.MediaType.APPLICATION_JSON
 import org.springframework.test.web.servlet.MockMvc
@@ -11,7 +11,7 @@ import org.springframework.test.web.servlet.ResultActions
 /**
  * @author Maxim Seredkin
  */
-class MockMvcTest {
+class MockMvcKtTest {
     private val mockMvc: MockMvc = mock()
 
     @Test
@@ -30,7 +30,7 @@ class MockMvcTest {
         }
 
         // Assert
-        Assertions.assertEquals(resultActions, result)
+        assertEquals(resultActions, result)
 
         verify(mockMvc).perform(requestBuilder)
 
