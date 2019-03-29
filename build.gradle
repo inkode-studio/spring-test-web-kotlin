@@ -10,29 +10,37 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    spring.version = '5.0.12.RELEASE'
+    spring.boot.version = '2.0.8.RELEASE'
+    junit.jupiter.version = '5.4.1'
+    mockito.kotlin.version = '2.1.0'
+    jsonassert.version = '1.5.0'
+}
+
 dependencies {
     // Kotlin
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     // Core provided dependencies
-    compileOnly("org.springframework:spring-test:5.0.12.RELEASE")
-    compileOnly("org.springframework:spring-web:5.0.12.RELEASE")
+    compileOnly("org.springframework:spring-test:${spring.version}")
+    compileOnly("org.springframework:spring-web:${spring.version}")
 
     // JUnit 5
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.4.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.4.1")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.4.1")
-
-    // Mockito
-    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junit.jupiter.version}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junit.jupiter.version}")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:${junit.jupiter.version}")
 
     // Spring boot web and test starters for testing
-    testImplementation("org.springframework.boot:spring-boot-starter-web:2.0.8.RELEASE")
-    testImplementation("org.springframework.boot:spring-boot-starter-test:2.0.8.RELEASE")
+    testImplementation("org.springframework.boot:spring-boot-starter-web:${spring.boot.version}")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${spring.boot.version}")
+
+    // Mockito
+    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:${mockito.kotlin.version}")
 
     // JSON assert
-    testImplementation("org.skyscreamer:jsonassert:1.5.0")
+    testImplementation("org.skyscreamer:jsonassert:${jsonassert.version}")
 }
 
 compileKotlin {
