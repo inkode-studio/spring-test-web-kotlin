@@ -1,0 +1,44 @@
+# Spring Web Test Kotlin
+
+Kotlin DSL extensions to work with Spring web testing.
+
+## Getting started
+
+``` kotlin
+@ExtendWith(SpringExtension::class)
+@SpringBootTest
+@AutoConfigureMockMvc
+class MockMvcKtIT {
+    @Autowired
+    private lateinit var mockMvc: MockMvc
+ 
+    @Test
+    fun on() {
+        // Act
+        val result: ResultActions = on(mockMvc) {   (1)
+            get("/test") {                          (2)
+                contentType(APPLICATION_JSON)       (3)
+            }
+        }
+
+        // Assert
+        result.andExpect(status().isOk)
+    }
+    
+    @TestConfiguration
+    class TestConfig {
+        @RestController
+        @RequestMapping("test", consumes = [APPLICATION_JSON_VALUE])
+        class TestController {
+            @GetMapping
+            fun index() = { }
+        }
+    }
+}
+```
+
+1. Wrap MockMvc for using of Kotlin DSL and execute MockMvc.perform(..)
+2. Create MockMvcRequestBuilder (see MockMvcRequestBuilders.kt)
+3. Set up MockMvcRequestBuilder
+
+Result of execution .on(..) method is ResultActions (```ResultAction mockMvc.perform(..)```)
