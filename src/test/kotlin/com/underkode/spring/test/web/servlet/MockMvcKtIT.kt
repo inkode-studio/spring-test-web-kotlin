@@ -1,6 +1,6 @@
-package io.inkode.spring.test.web.servlet
+package com.underkode.spring.test.web.servlet
 
-import io.inkode.spring.test.web.servlet.request.get
+import com.underkode.spring.test.web.servlet.request.get
 import org.junit.Assert.assertNotNull
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith

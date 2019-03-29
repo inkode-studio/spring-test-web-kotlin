@@ -1,4 +1,4 @@
-package io.inkode.spring
+package com.underkode.spring
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 

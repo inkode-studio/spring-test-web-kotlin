@@ -1,4 +1,4 @@
-package io.inkode.spring.test.web.servlet
+package com.underkode.spring.test.web.servlet
 
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.ResultActions

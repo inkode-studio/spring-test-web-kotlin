@@ -1,7 +1,7 @@
-package io.inkode.spring.test.web.servlet
+package com.underkode.spring.test.web.servlet
 
 import com.nhaarman.mockitokotlin2.*
-import io.inkode.spring.test.web.servlet.request.get
+import com.underkode.spring.test.web.servlet.request.get
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.springframework.http.MediaType.APPLICATION_JSON
