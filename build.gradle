@@ -1,6 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.21'
     id "org.jetbrains.kotlin.plugin.spring" version "1.3.21"
+    id "io.spring.dependency-management" version "1.0.7.RELEASE"
 }
 
 group 'com.underkode.spring'
@@ -11,11 +12,11 @@ repositories {
 }
 
 ext {
-    spring.version = '5.0.12.RELEASE'
-    spring.boot.version = '2.0.8.RELEASE'
-    junit.jupiter.version = '5.4.1'
-    mockito.kotlin.version = '2.1.0'
-    jsonassert.version = '1.5.0'
+    springVersion = '5.0.4.RELEASE'
+    springBootVersion = '2.0.0.RELEASE'
+    junitJupiterVersion = '5.4.1'
+    mockitoKotlinVersion = '2.1.0'
+    jsonassertVersion = '1.5.0'
 }
 
 dependencies {
@@ -24,23 +25,23 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     // Core provided dependencies
-    compileOnly("org.springframework:spring-test:${spring.version}")
-    compileOnly("org.springframework:spring-web:${spring.version}")
+    compileOnly("org.springframework:spring-test:${springVersion}")
+    compileOnly("org.springframework:spring-web:${springVersion}")
 
     // JUnit 5
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junit.jupiter.version}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junit.jupiter.version}")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:${junit.jupiter.version}")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}")
 
     // Spring boot web and test starters for testing
-    testImplementation("org.springframework.boot:spring-boot-starter-web:${spring.boot.version}")
-    testImplementation("org.springframework.boot:spring-boot-starter-test:${spring.boot.version}")
+    testImplementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 
     // Mockito
-    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:${mockito.kotlin.version}")
+    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}")
 
     // JSON assert
-    testImplementation("org.skyscreamer:jsonassert:${jsonassert.version}")
+    testImplementation("org.skyscreamer:jsonassert:${jsonassertVersion}")
 }
 
 compileKotlin {
