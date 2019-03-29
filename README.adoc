@@ -2,6 +2,11 @@
 
 Kotlin DSL extensions to work with Spring web testing.
 
+## Dependencies
+
+* org.springframework:spring-test:[5.0.4.RELEASE,)
+* org.springframework:spring-web:[5.0.4.RELEASE,)
+
 ## Getting started
 
 ``` kotlin
