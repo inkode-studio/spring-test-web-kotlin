@@ -1,4 +1,4 @@
-package io.inkode.spring.test.web.servlet.request
+package com.underkode.spring.test.web.servlet.request
 
 import org.springframework.http.HttpMethod
 import org.springframework.test.web.servlet.RequestBuilder

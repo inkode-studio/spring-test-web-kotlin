@@ -3,7 +3,7 @@ plugins {
     id "org.jetbrains.kotlin.plugin.spring" version "1.3.21"
 }
 
-group 'io.inkode.spring'
+group 'com.underkode.spring'
 version '0.1-SNAPSHOT'
 
 repositories {
